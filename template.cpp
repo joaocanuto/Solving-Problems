@@ -23,31 +23,22 @@ const ll inf = INT_MAX;
 const ld pi = acos(-1.0);
 const ll md = 1000000007;
 
-int n;
-int k = 0;
+int solve(){
 
-// x + 
-
-
-int solve(int x){
-    int res = 0;
-    while(x != 1 << (n-1)){
-        bug(x);
-        if( x < 1 << (n-1)){
-            bug("if");
-            res++;
-            x = x*2;
-        } else {
-            bug("else");
-            x = (1 << n) - x;
-        }
-    }
-    return res;
+    return 0;
 }
 
-signed main() {
-    int x;
-    cin >> n >> x;
-    cout << solve(x) << endl;
+signed main(){
+    IOS;
+    //cin >> t;
+    int t = 1;
+    while(t--){
+        solve();
+    }
+
+    // #ifndef ONLINE_JUDGE
+    //     clock_t tStart = clock();
+    //     cerr<<fixed<<setprecision(10)<<"\nTime Taken: "<<(double)(clock()- tStart)/CLOCKS_PER_SEC<<endl;
+    // #endif
     return 0;
 }
