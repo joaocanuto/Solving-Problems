@@ -1,5 +1,17 @@
 # 2023-2024 ICPC Brazil Subregional Programming Contest
 
+# Nexts:
+
+- [x]  A
+- [x]  F
+- [x]  L
+- [x]  M
+- [ ]  I
+- [ ]  E
+- [ ]  G
+- [ ]  C
+- [ ]  H
+
 ## M: Floyd Warshall
 
 - dist -> atualiza seguindo a logica do Floyd Warshall
