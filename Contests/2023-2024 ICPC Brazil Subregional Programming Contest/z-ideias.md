@@ -1,5 +1,6 @@
-
-### M:
+GYM: https://codeforces.com/gym/104555
+### M: 
+Link: https://codeforces.com/gym/104555/problem/M
 
 Ideia: Floyd Warshall
 
