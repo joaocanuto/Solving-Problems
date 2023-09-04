@@ -23,13 +23,19 @@ const ll md = 1000000007;
 const int maxn = 1e6; 
 
 int solve(){
+    int n, h; cin >> n >> h; int ans = 0;
+    for(int i=0; i < n; i++){
+        int a; cin >> a;
+        if ( a <= h ) ans++;
+    }
+    cout << ans << endl;
     return 0;
 }
 
 signed main(){
     IOS;
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while(t--){
         solve();
     }

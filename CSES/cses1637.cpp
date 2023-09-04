@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+template<typename... T>
+void see(T&... args) { ((cin >> args), ...);}
 #define pii pair<int,int>
 #define vi vector<int>
 #define vii vector<pii>
@@ -20,23 +22,31 @@ using namespace std;
 const ll inf = INT_MAX;
 const ld pi = acos(-1.0);
 const ll md = 1000000007;
-const int maxn = 1e6; 
+
+//Removendo digitos para ter o numero proximo a zero.
+const int N = 1e6+5;
+int dp[N];
 
 int solve(){
+    int n; cin >> n;
+    dp[0] = 0;
+    for(int i=1; i <= n; i++){
+        int temp = i;
+        int minSteps = 1e6+2;
+        while(temp != 0){
+            int di = temp%10;
+            temp = temp/10;
+            if(di == 0) continue;
+            minSteps = min(minSteps, 1 + dp[i - di]);
+        }
+        dp[i] = minSteps;
+    }
+    cout << dp[n] << endl;
     return 0;
 }
 
-signed main(){
-    IOS;
-    int t = 1;
-    cin >> t;
-    while(t--){
-        solve();
-    }
-
-    // #ifndef ONLINE_JUDGE
-    //     clock_t tStart = clock();
-    //     cerr<<fixed<<setprecision(10)<<"\nTime Taken: "<<(double)(clock()- tStart)/CLOCKS_PER_SEC<<endl;
-    // #endif
+signed main() {
+    IOS
+    solve();
     return 0;
 }

@@ -23,13 +23,27 @@ const ll md = 1000000007;
 const int maxn = 1e6; 
 
 int solve(){
+    string s; cin >> s;
+    int k; cin >> k;
+    multiset<char> sr[k+1];
+    for(int i=0; i < s.size(); i++){
+        sr[i%k].insert(s[i]);
+    }
+    for(int i = 0; i < k; i++){
+        int j = 0;
+        for(auto x : sr[i]){
+            s[i + j*k] = x;
+            j++;
+        }
+    }
+    cout << s << endl;
     return 0;
 }
 
 signed main(){
     IOS;
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while(t--){
         solve();
     }

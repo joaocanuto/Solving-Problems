@@ -22,14 +22,45 @@ const ld pi = acos(-1.0);
 const ll md = 1000000007;
 const int maxn = 1e6; 
 
+const int N = 3e5;
+int a[N], seg[4*N];
+int n,q; 
+
+void update(int id, int val, int i = 0, int l = 0, int r = n - 1) {
+	if(id>r or id<l) return;
+	if(l == r){
+		if(l == id) seg[i] = val;
+		return;
+	}
+	int mid = (l+r)/2;
+	update(id, val, i*2+1, l, mid); // leftchild = 2*i + 1 
+	update(id, val, i*2+2, mid + 1, r); // rightchild = 2*i +2
+	seg[i] = min(seg[i*2+1] , seg[i*2+2]);
+}
+int getMin(int L, int R, int i = 0, int l = 0, int r = n - 1) {
+	if (l> R or  r< L) return 1e9;
+	if (l>=L and r<=R) return seg[i];
+	int mid = (l+r)/2;
+	return min( getMin(L, R, i*2+1, l, mid) , getMin(L, R, i*2+2, mid+1, r) );
+}
+
+
+
 int solve(){
+    cin >> n >> q;
+    rep(i,0,n) cin >> a[i];
+    rep(i,0,n) update(i,a[i]);
+    while(q--){
+        int left, right; cin>> left >> right; left--; right--;
+        cout << getMin(left,right) << endl;
+    }
     return 0;
 }
 
 signed main(){
     IOS;
+    //cin >> t;
     int t = 1;
-    cin >> t;
     while(t--){
         solve();
     }

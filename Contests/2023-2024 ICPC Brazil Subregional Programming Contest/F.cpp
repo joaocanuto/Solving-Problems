@@ -23,13 +23,30 @@ const ll md = 1000000007;
 const int maxn = 1e6; 
 
 int solve(){
+    int d, c, r; cin >> d >> c >> r;
+    vector<int> cc;
+    for(int i=0; i < c; i++){
+        int x; cin >> x;
+        cc.pb(x);
+    }
+    for(int j=0; j < r; j++){
+        int x; cin >> x; 
+        d += x;
+    }
+    int ans = 0;
+    for(int i=0; i < cc.size(); i++){
+        d -= cc[i];
+        if( d < 0 )break; 
+        ans++;
+    }
+    cout << ans + r << endl;
     return 0;
 }
 
 signed main(){
     IOS;
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while(t--){
         solve();
     }
