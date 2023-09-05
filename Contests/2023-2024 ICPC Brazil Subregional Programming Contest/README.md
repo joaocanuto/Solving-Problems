@@ -8,10 +8,14 @@
 - [x]  M
 - [ ]  I
 - [ ]  E
-- [ ]  G
+- [x]  G
 - [ ]  C
 - [ ]  H
 
+## G: Convex Hull Trick
+
+Codigo base para ideia:  [G - Maximizing Flight Efficiency.cpp](https://pastebin.com/a00BymHy)
+Algoritmo usado : [Convex Hull](https://cp-algorithms.com/geometry/convex-hull.html#grahams-scan-algorithm)
 ## M: Floyd Warshall
 
 - dist -> atualiza seguindo a logica do Floyd Warshall
